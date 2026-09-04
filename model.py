@@ -38,12 +38,13 @@ def regime_prob(t, sig_I, nu=NU, sig0=SIG0):
     F = lambda x: norm.cdf((np.log(x/sig0))/sd) if np.isfinite(x) else 1.0
     return F(hi) - (F(lo) if lo > 0 else 0.0)
 
-def cell_stats(t, sig_I, sig_R=None, rho=RHO, nu=NU, q=0.05, pnl_fn=None):
+def cell_stats(t, sig_I, sig_R=None, rho=RHO, nu=NU, q=0.05, pnl_fn=None, mu=r):
     """P(P&L>0), E[P&L] and the q-quantile of P&L for a position unwound at elapsed time t
     under the cell's conditional measure. Adaptive quadrature over +/- 8 conditional s.d.
     (scipy.integrate.quad, epsabs=1e-9); the quantile is taken on a 20,001-point
-    probability-weighted grid of the same range. See mc_check() for the Monte Carlo cross-check."""
-    m, s = cond_lognormal(t, sig_I, sig_R, rho, nu)
+    probability-weighted grid of the same range. See mc_check() for the Monte Carlo cross-check.
+    mu: drift of ln S for the band (default r, the risk-neutral drift; the display's Table 4 varies it)."""
+    m, s = cond_lognormal(t, sig_I, sig_R, rho, nu, mu=mu)
     tau = T - t
     pnl = pnl_fn or (lambda x: straddle(np.exp(x), tau, sig_I) - STR0)
     dens = lambda x: norm.pdf((x-m)/s)/s

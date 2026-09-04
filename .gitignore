@@ -1,1 +1,7 @@
 __pycache__/
+*.aux
+*.log
+*.out
+*.pyc
+data/AAPL_close.csv
+data/weekly_*.csv

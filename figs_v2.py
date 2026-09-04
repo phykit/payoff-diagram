@@ -105,7 +105,7 @@ handles=[Line2D([0],[0],color=INK,lw=1.4,label=r"Unwind P\&L at $\sigma_I$ (mid-
          Patch(facecolor=BLUE,alpha=0.12,label=r"95\% band"),
          Line2D([0],[0],color=BLUE,lw=0.7,label="Conditional median of spot")]
 fig.legend(handles=handles, loc="lower center", ncol=4, fontsize=7.3, frameon=False, bbox_to_anchor=(0.5,0.0))
-fig.suptitle("One trade, twelve honest pictures", x=0.02, ha="left", fontsize=10.5, y=0.985)
+fig.suptitle("The proposed display, expert mode", x=0.02, ha="left", fontsize=10.5, y=0.985)
 fig.text(0.02,0.958, "Long 50-strike straddle bought at 25\\% vol: P\\&L if unwound (black) at each quarter of its life, by prevailing implied-vol regime $\\sigma_I$.\nBands: where the share is likely to be given that regime, with realised vol $\\sigma_R=\\sigma_I$ (lognormal; $\\rho="+f"{RHO:.2f}"+"$, $\\nu="+f"{NU:.2f}"+"$ from Apple, 2021 to 2026).",
          fontsize=7.6, color="#5a5a5a", va="top")
 fig.tight_layout(rect=(0.02,0.055,1,0.925)); fig.savefig("v2_fig4.pdf"); plt.close(fig)
@@ -162,7 +162,7 @@ for i,h in enumerate(hours):
         ax.tick_params(labelsize=7); ax.yaxis.set_major_formatter(PTS); ax.xaxis.set_major_formatter(PTS)
 for j in range(3): axes[3,j].set_xlabel("Index level (points)", fontsize=8)
 fig.suptitle("The same display at zero days to expiry", x=0.02, ha="left", fontsize=10.5, y=0.985)
-fig.text(0.02,0.958, f"Long at-the-money straddle on an index at 100, bought at the open at 18\\% vol for {prem0:.2f} points, 6.5 trading hours to expiry.\nBands: 68\\% and 95\\% lognormal ranges for the index by that hour under the cell's vol; no spot--vol correlation (see text).",
+fig.text(0.02,0.958, f"Long at-the-money straddle on an index at 100, bought at the open at 18\\% vol for {prem0:.3f} points, 6.5 trading hours to expiry.\nBands: 68\\% and 95\\% lognormal ranges for the index by that hour under the cell's vol; no spot--vol correlation (see text).",
          fontsize=7.6, color="#5a5a5a", va="top")
 fig.tight_layout(rect=(0,0,1,0.925)); fig.savefig("v2_fig6.pdf"); plt.close(fig)
 print("0DTE premium", round(prem0,3)); print("done")

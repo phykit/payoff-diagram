@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One command: validate the quoted numbers, regenerate the six figures, typeset the article.
+# One command: validate the quoted numbers, regenerate the seven figures, typeset the article.
 set -e
 python validate.py
 python figs_v2.py

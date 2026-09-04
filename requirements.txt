@@ -2,4 +2,4 @@ numpy==2.4.4
 scipy==1.17.1
 matplotlib==3.10.9
 pandas==3.0.2
-# Python 3.11.15; pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023) with mathpazo, microtype, booktabs, caption, fancyhdr, titlesec, enumitem, placeins, hyperref
+# Python 3.11.15; pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023) with mathpazo, microtype, booktabs, caption, fancyhdr, titlesec, enumitem, placeins, hyperref, xurl

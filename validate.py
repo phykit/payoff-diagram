@@ -41,9 +41,17 @@ fns={"call":lambda x,sg: bs(np.exp(x),K,tau,sg,r,"c")-C0,
 for nm,fn in fns.items():
     for sg in REGIMES:
         P,E,Q=cell_stats(te,sg,pnl_fn=lambda x,sg=sg,fn=fn: fn(x,sg)); out[f"fig6_{nm}_{int(sg*100)}_Pprofit"]=P; out[f"fig6_{nm}_{int(sg*100)}_E"]=E; out[f"fig6_{nm}_{int(sg*100)}_Q5"]=Q
-# Table 6 (OU sensitivity)
+# Table 6 (OU sensitivity, Appendix A)
 for sg in REGIMES:
     out[f"ou_expiry_{int(sg*100)}_Pregime"]=regime_prob_ou(0.5,sg); P,E,c=cell_stats_ou(0.5,sg); out[f"ou_expiry_{int(sg*100)}_Pprofit"]=P; out[f"ou_expiry_{int(sg*100)}_centre"]=c
+# Table 4 (robustness of the bottom row) and the drift sensitivity of Appendix A
+import robustness
+for label, cells in robustness.table().items():
+    key = label.split(',')[0].split(':')[0].replace(' ','_').replace('$','').replace('\\','').lower()[:24]
+    for sg,(pr,P,E) in zip(REGIMES,cells):
+        out[f"t5_{key}_{int(sg*100)}_Pregime"]=pr; out[f"t5_{key}_{int(sg*100)}_Pprofit"]=P; out[f"t5_{key}_{int(sg*100)}_E"]=E
+for mu in (0.0,0.04,0.10,0.15):
+    P,E,Q=cell_stats(0.5,0.25,mu=mu); out[f"drift_{int(mu*100)}_Pprofit"]=P; out[f"drift_{int(mu*100)}_E"]=E
 # Monte Carlo cross-check
 P,E,Q = cell_stats(0.25,0.45); Pm,Em,Qm = mc_check(0.25,0.45)
 out["mc_dP"]=abs(P-Pm); out["mc_dE"]=abs(E-Em); out["mc_dQ"]=abs(Q-Qm)

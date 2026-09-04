@@ -8,3 +8,20 @@
 # md5 of the exact files used for the article (VXAPL as downloaded 4 Sep 2026; AAPL slice as above)
 4122b003d8c6ebb92c1fbc3e8a7dca53  VXAPL_History.csv
 ad7eeffbdd801634459a79bcb2e89128  AAPL_close.csv
+
+# weekly-sampled Nasdaq closes (every fifth trading day from 2021-09-01 to 2026-09-03, accessed 4 Sep 2026): row count, sum of closes, sum of YYYYMMDD integers
+weekly_AMZN.csv n=253 sum=43997.722 sumdate=5120060799
+weekly_GOOG.csv n=253 sum=45034.705 sumdate=5120060799
+weekly_GS.csv n=253 sum=132336.160 sumdate=5120060799
+weekly_IBM.csv n=253 sum=47892.694 sumdate=5120060799
+weekly_GLD.csv n=253 sum=62095.680 sumdate=5120060799
+weekly_USO.csv n=253 sum=19458.940 sumdate=5120060799
+weekly_SPY.csv n=253 sum=133271.130 sumdate=5120060799
+# md5 of the Cboe index files as downloaded 4 Sep 2026
+fbd68c7b58bda8f84e66bfde1df5681a  GVZ_History.csv
+a131ae57530f8a2b742cfb388ace5c7d  OVX_History.csv
+4122b003d8c6ebb92c1fbc3e8a7dca53  VXAPL_History.csv
+f3a59dd65a94b6b9e35c7d7accf2ad59  VXAZN_History.csv
+818c2ac0c0923c76f1b5e098cccf015d  VXGOG_History.csv
+692b754b454942ac1b0608f5953613b5  VXGS_History.csv
+665fb90ab7582b6e6b95d15b978ef1b3  VXIBM_History.csv
