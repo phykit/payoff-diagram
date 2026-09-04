@@ -1,0 +1,10 @@
+# AAPL_close.csv, 2021-09-01 to 2026-09-03 (Nasdaq, accessed 4 Sep 2026): per-year row count, sum of closes, sum of YYYYMMDD integers
+2021 n=85  sum=13228.800 sumdate=1717940726
+2022 n=251 sum=38863.600 sumdate=5075388327
+2023 n=250 sum=43137.240 sumdate=5057667354
+2024 n=252 sum=52215.890 sumdate=5100648443
+2025 n=250 sum=58060.130 sumdate=5062668344
+2026 n=169 sum=48192.270 sumdate=3424020936   (to 2026-09-03)
+# md5 of the exact files used for the article (VXAPL as downloaded 4 Sep 2026; AAPL slice as above)
+4122b003d8c6ebb92c1fbc3e8a7dca53  VXAPL_History.csv
+ad7eeffbdd801634459a79bcb2e89128  AAPL_close.csv
