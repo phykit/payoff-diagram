@@ -40,7 +40,7 @@ Editorial corrections requested by *Wilmott* before typesetting; no model, param
 - Figure files renamed so that `v2_fig6.pdf` is Figure 6 and `v2_fig7.pdf` is Figure 7; `figs_v2.py` reordered to match.
 - Manual `\setcounter{figure}` calls removed; vendor dating harmonised to 4 September 2026; Figure 1 caption reworded.
 - Figure 5 caption explains why a dot count can differ by one from the cell probability.
-- Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor); a short form of the label added to the Figure 5 caption.
+- Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor); a short form of the label added to the Figure 5 caption, and the Section 4 label key states that every rendering of the display in the article is illustrative.
 - Natenberg (2015) and Taleb (1997) cited in Section 1 as practitioner prior art on the expiry-versus-mark distinction.
 - Figures regenerated with `\pagestyle{empty}` in the PGF preamble so that the figure PDFs no longer carry an invisible page number in their text layer (it confused automated readers); the pictures are unchanged.
 - Section 2 gives the legs as 4.004 and 3.014; the Figure 2 floor is at S of about 47.1 (the straddle's zero-delta point), not 47.2.
