@@ -40,5 +40,6 @@ Editorial corrections requested by *Wilmott* before typesetting; no model, param
 - Figure files renamed so that `v2_fig6.pdf` is Figure 6 and `v2_fig7.pdf` is Figure 7; `figs_v2.py` reordered to match.
 - Manual `\setcounter{figure}` calls removed; vendor dating harmonised to 4 September 2026; Figure 1 caption reworded.
 - Figure 5 caption explains why a dot count can differ by one from the cell probability.
-- Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor).
+- Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor); a short form of the label added to the Figure 5 caption.
+- Natenberg (2015) and Taleb (1997) cited in Section 1 as practitioner prior art on the expiry-versus-mark distinction.
 - Provenance section and author note name Prof. Jason Dykes as supervisor of the 2018 project; author note adds the author's affiliation, a statement that the views are his own, and a competing-interests declaration.

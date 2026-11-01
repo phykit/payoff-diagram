@@ -56,7 +56,7 @@ The payoff diagram is not lying to you. It is answering a question nobody at the
 
 \noindent Most retail options platforms, textbooks and broker education pages lead with the same picture: profit or loss against terminal share price, and a kinked line. It is probably the most viewed chart in finance, and retail education still teaches it as \emph{the} risk visual whilst conceding that most positions are closed before expiry.
 
-The diagram is very good at what it is for: comparing structures at expiry, locating break-evens and maximum loss, teaching the shape of optionality. The charge is not that it is wrong but that a terminal-payoff display has been institutionalised as a \emph{risk} display, and the charge is not new. Israelov and Nielsen (2014) listed among their eight myths of covered-call investing the belief that ``risk exposure can be expressed in a payoff diagram'', and Wystup (2019), in these pages, put the confusion of payoff diagrams with \PnL{} diagrams first among his common misconceptions. The diagram answers one question, what the position is worth at expiry; what it is worth \emph{now}, what happens if implied volatility moves, and how \emph{likely} any outcome is lie outside its vocabulary.
+The diagram is very good at what it is for: comparing structures at expiry, locating break-evens and maximum loss, teaching the shape of optionality. The charge is not that it is wrong but that a terminal-payoff display has been institutionalised as a \emph{risk} display, and the charge is not new. Israelov and Nielsen (2014) listed among their eight myths of covered-call investing the belief that ``risk exposure can be expressed in a payoff diagram'', and Wystup (2019), in these pages, put the confusion of payoff diagrams with \PnL{} diagrams first among his common misconceptions. The practitioner texts make the same point: Natenberg (2015) builds his treatment around the theoretical value of a position before expiry rather than its expiry profile, and Taleb (1997) treats the \PnL{} of an option position as a path-dependent quantity of which the expiry payoff is one slice; what is at issue here is not the point but the display that ignores it. The diagram answers one question, what the position is worth at expiry; what it is worth \emph{now}, what happens if implied volatility moves, and how \emph{likely} any outcome is lie outside its vocabulary.
 
 Two structural omissions do the damage.
 
@@ -202,7 +202,7 @@ Section~3 flagged that shaded bands are the encoding the literature predicts to 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v2_fig5.pdf}
-\caption{Retail mode: the three-months-in row of Figure~4 with the band replaced by a twenty-dot quantile dotplot of spot under each cell's conditional measure. Blue dots unwind at a profit, orange at a loss. The dots sit at the quantile midpoints $(k-\tfrac12)/20$, so a count can differ by one dot from the cell's probability of profit: the base-case cell's 24\% shows as 4 of 20, not 5, because its profit mass is split between the two tails (7\% below the lower break-even, 17\% above the upper) and each tail is counted in whole dots. \emph{Status: model-implied, same model and parameters as Figure~4.}}
+\caption{Retail mode: the three-months-in row of Figure~4 with the band replaced by a twenty-dot quantile dotplot of spot under each cell's conditional measure. Blue dots unwind at a profit, orange at a loss. The dots sit at the quantile midpoints $(k-\tfrac12)/20$, so a count can differ by one dot from the cell's probability of profit: the base-case cell's 24\% shows as 4 of 20, not 5, because its profit mass is split between the two tails (7\% below the lower break-even, 17\% above the upper) and each tail is counted in whole dots. \emph{Status: model-implied, same model and parameters as Figure~4. Illustrative only: a hypothetical mock-up, not a financial promotion or a recommendation; see Section~4.}}
 \end{figure}
 
 \subsection{Three other positions}
@@ -396,9 +396,11 @@ Oil ETF (USO) / OVX & $+0.06$ & 0.90 & $+0.17$ & 0.71 & 38\% & 0 & 33 & 67 \\
 \item Ko, S., Cho, I., Afzal, S., Yau, C., Chae, J., Malik, A., Beck, K., Jang, Y., Ribarsky, W. and Ebert, D.S. (2016). A survey on visual analysis approaches for financial data. \emph{Computer Graphics Forum}, 35(3), 599--617. doi:10.1111/cgf.12931.
 \item Munzner, T. (2014). \emph{Visualization Analysis and Design}. AK Peters/CRC Press.
 \item Nasdaq (2026). \emph{Historical data: AAPL, AMZN, GOOG, GS, IBM, GLD, USO}. nasdaq.com/market-activity/stocks/aapl/historical and sibling pages, accessed 4 September 2026; not redistributed.
+\item Natenberg, S. (2015). \emph{Option Volatility and Pricing: Advanced Trading Strategies and Techniques}, 2nd edition. McGraw-Hill Education.
 \item OptionStrat (2026). \emph{Options profit calculator tutorial}. optionstrat.com/blog/options-profit-calculator-tutorial, accessed 4 September 2026.
 \item OptionsProfitCalculator (2026). \emph{Frequently asked questions}. optionsprofitcalculator.com/faq.html, accessed 4 September 2026.
 \item Padilla, L., Kay, M. and Hullman, J. (2021). Uncertainty visualization. In \emph{Wiley StatsRef: Statistics Reference Online}, 1--18. Wiley. doi:10.1002/9781118445112.stat08296.
+\item Taleb, N.N. (1997). \emph{Dynamic Hedging: Managing Vanilla and Exotic Options}. Wiley.
 \item The Consumer Composite Investments (Designated Activities) Regulations 2024, SI 2024/1198, regulation 4. legislation.gov.uk/uksi/2024/1198.
 \item Tufte, E.R. (1983). \emph{The Visual Display of Quantitative Information}. Graphics Press.
 \item Wystup, U. (2019). Shedding light on common misconceptions. \emph{Wilmott}, 2019(104), 16--19. doi:10.1002/wilm.10801. Preprint at mathfinance.com/publications.
