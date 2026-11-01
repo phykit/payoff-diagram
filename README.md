@@ -42,4 +42,9 @@ Editorial corrections requested by *Wilmott* before typesetting; no model, param
 - Figure 5 caption explains why a dot count can differ by one from the cell probability.
 - Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor); a short form of the label added to the Figure 5 caption.
 - Natenberg (2015) and Taleb (1997) cited in Section 1 as practitioner prior art on the expiry-versus-mark distinction.
+- Figures regenerated with `\pagestyle{empty}` in the PGF preamble so that the figure PDFs no longer carry an invisible page number in their text layer (it confused automated readers); the pictures are unchanged.
+- Section 2 gives the legs as 4.004 and 3.014; the Figure 2 floor is at S of about 47.1 (the straddle's zero-delta point), not 47.2.
+- Appendix A: the display's nu = 0.85 is described as sitting between the monthly (0.83) and weekly (0.86) estimates; the count of non-overlapping months corrected to "fewer than 60"; Apple's 25.8% implied vol dated and sourced (VXAPL close, 3 September 2026).
+- Table 5 lists the drift as an input and a control, as the text already said; Appendix A's reference to Table 7's "last column" updated to "last three columns".
+- Section 3 vendor quotations cited inline; Tables 1, 2 and 6 carry Status labels; "three asset classes" replaced by "across equities, gold and oil"; reference list order corrected (Eaton before E*TRADE; OptionsProfitCalculator before OptionStrat); typewriter font switched to Latin Modern (no Type 3 font in the PDF); PDF title and author metadata set.
 - Provenance section and author note name Prof. Jason Dykes as supervisor of the 2018 project; author note adds the author's affiliation, a statement that the views are his own, and a competing-interests declaration.

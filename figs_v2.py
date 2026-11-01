@@ -7,7 +7,7 @@ from model import *
 
 plt.rcParams.update({
     "pgf.texsystem": "pdflatex", "pgf.rcfonts": False,
-    "pgf.preamble": r"\usepackage[T1]{fontenc}\usepackage{mathpazo}\usepackage{textcomp}\usepackage{amsmath}",
+    "pgf.preamble": r"\usepackage[T1]{fontenc}\usepackage{mathpazo}\usepackage{textcomp}\usepackage{amsmath}\pagestyle{empty}",  # pagestyle empty: no hidden page number in the figure text layer
     "font.family": "serif", "font.size": 9,
     "axes.linewidth": 0.7, "axes.edgecolor": "#4a4a4a", "axes.labelcolor": "#1a1a1a", "text.color": "#1a1a1a",
     "xtick.color": "#4a4a4a", "ytick.color": "#4a4a4a", "xtick.labelsize": 8, "ytick.labelsize": 8,
