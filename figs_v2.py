@@ -138,36 +138,7 @@ fig.text(0.02,0.975, "Each dot is one of twenty equally likely share prices thre
          fontsize=7.6, color="#5a5a5a", va="top")
 fig.tight_layout(rect=(0,0,1,0.93)); fig.savefig("v2_fig5.pdf"); plt.close(fig)
 
-# ---- Fig 6: 0DTE grid (index, points), rho=0 by construction
-I0=100.0; T0=1/252; regs0=[0.12,0.18,0.30]; hours=[1.0,3.0,5.0,6.5]
-X=np.linspace(95,105,801); PTS=FuncFormatter(lambda v,_: (r"$-$" if v<0 else "")+f"{abs(v):g}")
-prem0=float(straddle(I0,T0,0.18,K=I0))
-fig, axes = plt.subplots(4,3, figsize=(6.8,7.6), sharex=True, sharey=True)
-for i,h in enumerate(hours):
-    te=T0*h/6.5; tau=T0-te
-    for j,sg in enumerate(regs0):
-        ax=axes[i,j]; sd=sg*np.sqrt(te); m=np.log(I0)+(r-0.5*sg**2)*te
-        y=straddle(X,tau,sg,K=I0)-prem0
-        for z,a in ((2,0.10),(1,0.17)): ax.axvspan(np.exp(m-z*sd),np.exp(m+z*sd),color=BLUE,alpha=a,lw=0,zorder=1)
-        ax.axhline(0,color="#8a8a8a",lw=0.6,zorder=2); ax.plot(X,y,color=INK,lw=1.4,zorder=3)
-        # cell stats
-        xs=np.linspace(m-8*sd,m+8*sd,4001); dens=norm.pdf((xs-m)/sd)/sd; p=straddle(np.exp(xs),tau,sg,K=I0)-prem0
-        P=np.trapezoid(dens*(p>0),xs); E=np.trapezoid(dens*p,xs)
-        ax.text(0.03,0.96, f"P(profit) {P:.0%}, E[P\\&L] {'$-$' if E<0 else '$+$'}{abs(E):.2f}", transform=ax.transAxes, fontsize=6.6, va="top",
-                bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="none", alpha=0.85), zorder=6)
-        ax.set_xlim(95,105); ax.set_ylim(-1.3,4.6); ax.grid(True,color="#e2e2e2",lw=0.4); ax.set_axisbelow(True)
-        for sp in ("top","right"): ax.spines[sp].set_visible(False)
-        if i==0: ax.set_title(f"{int(sg*100)}"+r"\% vol regime", fontsize=9, pad=6)
-        if j==0: ax.set_ylabel({1.0:"1 hour in",3.0:"3 hours in",5.0:"5 hours in",6.5:"at the close"}[h], fontsize=8.5)
-        ax.tick_params(labelsize=7); ax.yaxis.set_major_formatter(PTS); ax.xaxis.set_major_formatter(PTS)
-for j in range(3): axes[3,j].set_xlabel("Index level (points)", fontsize=8)
-fig.suptitle("The same display at zero days to expiry", x=0.02, ha="left", fontsize=10.5, y=0.985)
-fig.text(0.02,0.958, f"Long at-the-money straddle on an index at 100, bought at the open at 18\\% vol for {prem0:.3f} points, 6.5 trading hours to expiry.\nBands: 68\\% and 95\\% lognormal ranges for the index by that hour under the cell's vol; no spot--vol correlation (see text).",
-         fontsize=7.6, color="#5a5a5a", va="top")
-fig.tight_layout(rect=(0,0,1,0.925)); fig.savefig("v2_fig6.pdf"); plt.close(fig)
-print("0DTE premium", round(prem0,3)); print("done")
-
-# ---- Fig 7: robustness across strategies, one row (u = T/2), three regimes ----
+# ---- Fig 6: robustness across strategies, one row (u = T/2), three regimes ----
 te=0.25; tau=T-te
 C0=float(bs(S0,K,T,SIG0,r,"c")); P45_0=float(bs(S0,45,T,SIG0,r,"p")); P40_0=float(bs(S0,40,T,SIG0,r,"p")); CR0=P45_0-P40_0
 strats=[("Long 50 call (debit 4.00)", lambda x,sg: bs(np.exp(x),K,tau,sg,r,"c")-C0),
@@ -195,5 +166,35 @@ for i,(name,fn) in enumerate(strats):
 fig.supxlabel("Share price three months in", fontsize=8.5, y=0.02)
 fig.suptitle("The same row for three other positions", x=0.02, ha="left", fontsize=10.5, y=0.985)
 fig.text(0.02,0.955, "Unwind P\\&L per share at $u = T/2$ by implied-vol regime, with the conditional 68\\% and 95\\% bands and cell statistics of Figure 4.\nThe short straddle is the mirror of Figure 4: the display shows losses where the terminal diagram shows a plateau.", fontsize=7.6, color="#5a5a5a", va="top")
-fig.tight_layout(rect=(0,0.03,1,0.925)); fig.savefig("v2_fig7.pdf"); plt.close(fig)
-print("fig7 credit", round(CR0,3))
+fig.tight_layout(rect=(0,0.03,1,0.925)); fig.savefig("v2_fig6.pdf"); plt.close(fig)
+print("fig6 credit", round(CR0,3))
+
+# ---- Fig 7: 0DTE grid (index, points), rho=0 by construction
+I0=100.0; T0=1/252; regs0=[0.12,0.18,0.30]; hours=[1.0,3.0,5.0,6.5]
+X=np.linspace(95,105,801); PTS=FuncFormatter(lambda v,_: (r"$-$" if v<0 else "")+f"{abs(v):g}")
+prem0=float(straddle(I0,T0,0.18,K=I0))
+fig, axes = plt.subplots(4,3, figsize=(6.8,7.6), sharex=True, sharey=True)
+for i,h in enumerate(hours):
+    te=T0*h/6.5; tau=T0-te
+    for j,sg in enumerate(regs0):
+        ax=axes[i,j]; sd=sg*np.sqrt(te); m=np.log(I0)+(r-0.5*sg**2)*te
+        y=straddle(X,tau,sg,K=I0)-prem0
+        for z,a in ((2,0.10),(1,0.17)): ax.axvspan(np.exp(m-z*sd),np.exp(m+z*sd),color=BLUE,alpha=a,lw=0,zorder=1)
+        ax.axhline(0,color="#8a8a8a",lw=0.6,zorder=2); ax.plot(X,y,color=INK,lw=1.4,zorder=3)
+        # cell stats
+        xs=np.linspace(m-8*sd,m+8*sd,4001); dens=norm.pdf((xs-m)/sd)/sd; p=straddle(np.exp(xs),tau,sg,K=I0)-prem0
+        P=np.trapezoid(dens*(p>0),xs); E=np.trapezoid(dens*p,xs)
+        ax.text(0.03,0.96, f"P(profit) {P:.0%}, E[P\\&L] {'$-$' if E<0 else '$+$'}{abs(E):.2f}", transform=ax.transAxes, fontsize=6.6, va="top",
+                bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="none", alpha=0.85), zorder=6)
+        ax.set_xlim(95,105); ax.set_ylim(-1.3,4.6); ax.grid(True,color="#e2e2e2",lw=0.4); ax.set_axisbelow(True)
+        for sp in ("top","right"): ax.spines[sp].set_visible(False)
+        if i==0: ax.set_title(f"{int(sg*100)}"+r"\% vol regime", fontsize=9, pad=6)
+        if j==0: ax.set_ylabel({1.0:"1 hour in",3.0:"3 hours in",5.0:"5 hours in",6.5:"at the close"}[h], fontsize=8.5)
+        ax.tick_params(labelsize=7); ax.yaxis.set_major_formatter(PTS); ax.xaxis.set_major_formatter(PTS)
+for j in range(3): axes[3,j].set_xlabel("Index level (points)", fontsize=8)
+fig.suptitle("The same display at zero days to expiry", x=0.02, ha="left", fontsize=10.5, y=0.985)
+fig.text(0.02,0.958, f"Long at-the-money straddle on an index at 100, bought at the open at 18\\% vol for {prem0:.3f} points, 6.5 trading hours to expiry.\nBands: 68\\% and 95\\% lognormal ranges for the index by that hour under the cell's vol; no spot--vol correlation (see text).",
+         fontsize=7.6, color="#5a5a5a", va="top")
+fig.tight_layout(rect=(0,0,1,0.925)); fig.savefig("v2_fig7.pdf"); plt.close(fig)
+print("0DTE premium", round(prem0,3))
+print("done")
