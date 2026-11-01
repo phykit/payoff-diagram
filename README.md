@@ -33,7 +33,7 @@ Code: MIT (see `LICENSE`). Manuscript text and figures: copyright the author; re
 ## Changes in v5.6 (1 November 2026)
 Editorial corrections requested by *Wilmott* before typesetting; no model, parameter or figure content changed, and `validate.py` still passes against the unchanged `expected_numbers.json`.
 - Table 1 quoted to three decimals from the unrounded output so that the components sum exactly (theta -0.611, vega 0.253 x 20 = +5.060, convexity residual -0.005, total +4.444); the text now gives the vega as 0.253 per point.
-- Table 2 caption states that entries are rounded from unrounded values (gross +4.444, 20% round trip 1.848, net +2.596) and the table no longer overflows the page.
+- Table 2 caption states that entries are rounded from unrounded values (gross +4.444, 20% round trip 1.848, net +2.596), the net column header no longer restates the rounded subtraction, and the table no longer overflows the page.
 - Regime probabilities given to one decimal in Tables 4 and 6 and in the text (35.5 / 35.7 / 28.8 lognormal; 16.5 / 76.5 / 7.1 mean-reverting; Apple observed 4.2 / 80.4 / 15.4), with independent-rounding notes in the Figure 4, Table 4, Table 6 and Table 7 captions.
 - Table 6: the Apple row's spot return is no longer printed under a "median spot" header; all three rows now give the median relative to the middle column.
 - Table 7: the bucket-share header rebuilt as three columns.
@@ -41,4 +41,4 @@ Editorial corrections requested by *Wilmott* before typesetting; no model, param
 - Manual `\setcounter{figure}` calls removed; vendor dating harmonised to 4 September 2026; Figure 1 caption reworded.
 - Figure 5 caption explains why a dot count can differ by one from the cell probability.
 - Point-of-sale mock-up sentence labelled "Illustrative only" (wording agreed with the editor).
-- Provenance section and author note name Prof. Jason Dykes as supervisor of the 2018 project; author note adds the author's affiliation and a competing-interests declaration.
+- Provenance section and author note name Prof. Jason Dykes as supervisor of the 2018 project; author note adds the author's affiliation, a statement that the views are his own, and a competing-interests declaration.
