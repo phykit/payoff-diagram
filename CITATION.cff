@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: >-
+  If you use this package, please cite the article it reproduces
+  (the preferred citation below). The repository itself can be cited
+  with the details in this file.
+title: >-
+  payoff-diagram: Reproduction package for "One Trade, Twelve Honest
+  Pictures"
+type: software
+authors:
+  - family-names: Kittson
+    given-names: Simon
+repository-code: "https://github.com/phykit/payoff-diagram"
+abstract: >-
+  Code, data and manuscript source that generate every figure and
+  number in the article "One Trade, Twelve Honest Pictures: the payoff
+  diagram is not a risk display".
+keywords:
+  - options
+  - payoff diagram
+  - risk display
+  - small multiples
+  - implied volatility
+  - uncertainty visualisation
+license: MIT
+version: "5.9"
+date-released: "2026-11-13"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Kittson
+      given-names: Simon
+  title: >-
+    One Trade, Twelve Honest Pictures: the payoff diagram is not a risk
+    display
+  journal: Wilmott
+  year: 2027
+  month: 1
+  status: in-press
