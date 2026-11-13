@@ -1,6 +1,6 @@
 # Reproduction package: "One Trade, Twelve Honest Pictures" (Kittson, 2026)
 
-Formerly titled "The Payoff Diagram Is Lying to You"; the standfirst now opens by reversing that phrase. Manuscript v5.6, 1 November 2026, as accepted by *Wilmott* for the January 2027 issue.
+Formerly titled "The Payoff Diagram Is Lying to You"; the standfirst now opens by reversing that phrase. Manuscript v5.8, 4 November 2026, the version lodged with *Wilmott* as final files for the January 2027 issue.
 
 Repository: https://github.com/phykit/payoff-diagram
 
@@ -29,6 +29,16 @@ Cboe index data are downloaded from Cboe's public endpoint under Cboe's terms of
 
 ## Licence
 Code: MIT (see `LICENSE`). Manuscript text and figures: copyright the author; reuse by permission.
+
+## Changes in v5.8 (4 November 2026)
+Two sentences of text against v5.7; no number, figure, table or page break changed.
+- Section 5: corrected a misstatement of method. The sentence previously said that Appendix A "uses" the mean-reverting vol law for the column weights; the appendix reports those weights (Table 6) as the better estimate, whilst the display (Figure 4, Table 4) carries the lognormal weights. The sentence now says so.
+- Figure 4 caption: states that the printed regime weights are the lognormal law's, chosen so that curve, band and weight in a cell come from one process, that they are upper bounds on the outer columns, and that Table 6 gives the mean-reverting alternative.
+
+## Changes in v5.7 (3 November 2026)
+Editorial only against v5.6; no number, figure, table value or caption statistic changed, and pagination is unchanged (22 pages).
+- Reference list set in *Wilmott* reference style: the publication year follows the author names and ends with a full stop, not in parentheses; italics confined to book and journal titles; initial capital after a colon in article and document titles.
+- Figures and tables are first called out in numerical order. The Section 5 reference to the cross-underlying calibration table, and the Table 4 caption's reference to it, now point to Appendix A; the Figure 4 float is placed after the paragraph that first calls it.
 
 ## Changes in v5.6 (1 November 2026)
 Editorial corrections requested by *Wilmott* before typesetting; no model, parameter or figure content changed, and `validate.py` still passes against the unchanged `expected_numbers.json`.
