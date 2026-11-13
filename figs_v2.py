@@ -50,9 +50,9 @@ for sp,ls,lab in ((0.02,(0,(1,1.5)),r"45\%, net of a 2\% spread"),(0.10,(0,(3,1.
 ax.plot(S, np.maximum(S-K,0)+np.maximum(K-S,0)-STR0, color=INK, lw=1.2, ls=(0,(4,2)), label="Expiry payoff", zorder=2)
 ax.plot(S[imin], y45[imin], "o", ms=5, color=ORANGE, mec="white", mew=1.0, zorder=5)
 ax.annotate(f"worst case: $+${y45[imin]:.2f}", xy=(S[imin],y45[imin]), xytext=(0,-13), textcoords="offset points", ha="center", fontsize=8, color=ORANGE)
-style(ax, xlab="Share price three weeks after opening the trade", ylab="Profit / loss if unwound")
+style(ax, xlab="Share price a month after opening the trade", ylab="Profit / loss if unwound")
 ax.set_xlim(30,70); ax.set_ylim(-9,17.5)
-head(ax, "What a volatility spike does to a six-month straddle", r"Long 50-strike straddle bought at 25\% vol for 7.02; unwound three weeks in")
+head(ax, "What a volatility spike does to a six-month straddle", r"Long 50-strike straddle bought at 25\% vol for 7.02; unwound a month in")
 ax.legend(loc="upper center", ncol=2, fontsize=7.3); fig.savefig("v2_fig2.pdf"); plt.close(fig)
 
 # ---- Fig 3 fan (unconditional lognormal, 20% vol)

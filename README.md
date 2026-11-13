@@ -1,6 +1,6 @@
 # Reproduction package: "One Trade, Twelve Honest Pictures" (Kittson, 2026)
 
-Formerly titled "The Payoff Diagram Is Lying to You"; the standfirst now opens by reversing that phrase. Manuscript v5.8, 4 November 2026, the version lodged with *Wilmott* as final files for the January 2027 issue.
+Formerly titled "The Payoff Diagram Is Lying to You"; the standfirst now opens by reversing that phrase. Manuscript v5.9, 13 November 2026. The article was accepted by *Wilmott* for the January 2027 issue; v5.8 (4 November 2026) is the version lodged as final files, and v5.9 corrects six points of fact or wording in it.
 
 Repository: https://github.com/phykit/payoff-diagram
 
@@ -29,6 +29,15 @@ Cboe index data are downloaded from Cboe's public endpoint under Cboe's terms of
 
 ## Licence
 Code: MIT (see `LICENSE`). Manuscript text and figures: copyright the author; reuse by permission.
+
+## Changes in v5.9 (13 November 2026)
+Six corrections of fact or wording against v5.8, and Figure 2 relabelled; no number, table value or caption statistic changed, and `validate.py` still passes against the unchanged `expected_numbers.json`.
+- Section 2, Table 1, Figure 2 and Section 8: the unwind date u = 21/250 is 21 trading days, about a calendar month, and was described as "three weeks"; it is now described as "a month". `figs_v2.py` and `v2_fig2.pdf` carry the same wording in the Figure 2 subtitle and horizontal-axis label; the curves are unchanged, and the other six figure files are untouched.
+- Section 3: Correll and Gleicher (2014) ran crowd-sourced experiments on a general audience; "misread even by trained readers" corrected accordingly.
+- Section 3: Fernandes et al. (2018) was an incentivised online experiment, not a field study of transit riders, and reports no result by expertise; the sentence now compares quantile dotplots with interval and density plots only.
+- Section 4 (zero days to expiry): "a 12-to-30 move within three hours as a ten-sigma event" restated as a move from 18% to 12% or to 30%, an event of more than ten sigma under the stated vol-of-vol.
+- Section 4 (zero days to expiry): "Halts and early exercise do not arise" confined to early exercise; index options are subject to market-wide trading halts.
+- Section 6: the statement that the PRIIPs scenarios were never tested on readers before they were mandated removed; "Three things" becomes "Two things".
 
 ## Changes in v5.8 (4 November 2026)
 Two sentences of text against v5.7; no number, figure, table or page break changed.
